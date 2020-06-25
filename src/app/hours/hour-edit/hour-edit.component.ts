@@ -1,17 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Time } from '@angular/common';
+import { Subscription } from 'rxjs';
 
 import { Hour } from '../hour.model';
 import { HoursService } from '../hours.service';
 
 @Component({
-  selector: 'app-hour-create',
-  templateUrl: './hour-create.component.html',
-  styleUrls: ['./hour-create.component.css'],
+  selector: 'app-hour-edit',
+  templateUrl: './hour-edit.component.html',
+  styleUrls: ['./hour-edit.component.css'],
 })
-export class HourCreateComponent implements OnInit {
+
+export class HourEditComponent {
   view = {
     userInDate: null,
     userInTime: null,
@@ -96,4 +98,6 @@ export class HourCreateComponent implements OnInit {
     var newDate = new Date(dateString);
     return newDate;
   }
+
+
 }

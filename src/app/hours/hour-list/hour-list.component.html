@@ -19,8 +19,12 @@
         <td> {{ hour.endTime | date:'HH:mm' }} </td>
         <td> חישוב זמן </td>
         <td>
-          <a mat-button color="primary" [routerLink]="['/edit', hour.id]">ערוך</a>
-          <button mat-button color="warn" (click)="onDelete(hour.id)">מחק</button>
+          <a mat-button color="primary" [routerLink]="['/edit', hour.id]">
+            <mat-icon>edit</mat-icon>
+          </a>
+          <button mat-button color="warn" (click)="onDelete(hour.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
         </td>
 
       </tr>
