@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-
 import { Hour } from '../hour.model';
 import { HoursService } from '../hours.service';
 
@@ -15,7 +14,7 @@ export class HourListComponent implements OnInit, OnDestroy {
   isLoading = false;
   private hoursSub: Subscription;
 
-  constructor(public hoursService: HoursService) {}
+  constructor(public hoursService: HoursService) { }
 
   ngOnInit() {
     this.isLoading = true;
@@ -26,7 +25,7 @@ export class HourListComponent implements OnInit, OnDestroy {
         this.isLoading = false;
         this.hours = hours;
       });
-      this.today = new Date().toLocaleDateString('he-IL', {month:'long'});
+    this.today = new Date().toLocaleDateString('he-IL', { month: 'long' });
   }
 
   onDelete(hourID: string) {
