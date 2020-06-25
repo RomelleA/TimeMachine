@@ -1,0 +1,56 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+
+<mat-card *ngIf="!isLoading">
+  <form (submit)="onSave(hourForm1)" #hourForm1="ngForm">
+    <mat-form-field>
+      <mat-label>תאריך</mat-label>
+      <input
+        matInput
+        name="inDate"
+        [(ngModel)]="view.userInDate"
+        required
+        [matDatepicker]="picker"
+        #inDate="ngModel"
+      />
+      <!-- ^^^ [(ngModel)]="userInDate" ^^^ -->
+      <mat-error *ngIf="inDate.invalid">יש להזין תאריך</mat-error>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>כניסה</mat-label>
+      <input
+        matInput
+        type="time"
+        name="clockIn"
+        [(ngModel)]="view.userInTime"
+        required
+        #inHour="ngModel"
+      />
+      <mat-error *ngIf="inHour.invalid">יש להזין שעת כניסה</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>יציאה</mat-label>
+      <input
+        matInput
+        type="time"
+        name="clockOut"
+        [(ngModel)]="view.userOutTime"
+        required
+        #outHour="ngModel"
+      />
+      <mat-error *ngIf="outHour.invalid">יש להזין שעת יציאה</mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="accent" type="submit">
+      שמור
+    </button>
+  </form>
+</mat-card>
+
+<p></p>
+<p>
+  Time <br> {{ view.userInTime }} - {{ view.userOutTime }} <br />
+  {{ view.userInDate }}
+</p>

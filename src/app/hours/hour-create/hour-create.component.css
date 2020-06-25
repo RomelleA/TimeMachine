@@ -1,0 +1,27 @@
+mat-card {
+  margin: auto;
+  width: fit-content;
+  padding: 10px 50px 20px 50px;
+}
+
+mat-form-field {
+  width: 100px;
+  display: block;
+  margin: 15px auto;
+  /* padding: initial; */
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+mat-error {
+  font-size: smaller;
+}
+
+button {
+  display: block;
+  margin: auto;
+}
+
+

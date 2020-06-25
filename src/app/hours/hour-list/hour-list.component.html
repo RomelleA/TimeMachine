@@ -1,0 +1,41 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<mat-accordion multi="true" *ngIf="hours.length > 0 && !isLoading">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      חודש {{ today }}
+    </mat-expansion-panel-header>
+
+    <table *ngIf="hours.length > 0 && !isLoading">
+      <tr>
+        <th> תאריך </th>
+        <th> כניסה </th>
+        <th> יציאה </th>
+        <th> זמן </th>
+      </tr>
+
+      <tr *ngFor="let hour of hours">
+        <td> {{ hour.date | date:'dd.MM.y' }} </td>
+        <td> {{ hour.startTime | date:'HH:mm' }} </td>
+        <td> {{ hour.endTime | date:'HH:mm' }} </td>
+        <td> חישוב זמן </td>
+        <td>
+          <a mat-button color="primary" [routerLink]="['/edit', hour.id]">ערוך</a>
+          <button mat-button color="warn" (click)="onDelete(hour.id)">מחק</button>
+        </td>
+
+      </tr>
+      <tr>
+        <th> סה"כ </th>
+        <td></td>
+        <td></td>
+        <th> חישוב כל הזמנים </th>
+        <td></td>
+
+      </tr>
+    </table>
+
+  </mat-expansion-panel>
+</mat-accordion>
+
+<p class="mat-body-1" *ngIf="hours.length <= 0 && !isLoading">עדיין לא עדכנת שעות</p>
+

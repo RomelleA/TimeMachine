@@ -1,0 +1,20 @@
+a {
+  text-decoration: none;
+  color: white;
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.mat-primary {
+  color: rgb(255, 217, 0);
+}
+
+

@@ -1,0 +1,13 @@
+:host {
+  display: block;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+table {
+  width: 100%;
+}
